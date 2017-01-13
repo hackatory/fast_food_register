@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Pancho Pansa</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/menu.css">
+</head>
+
+
+<body>
+
+<div class="container" style="margin: 30px">
+<div class="row">
+  <!-- Columna Menus -->
+  <div class="col-sm-8">
+
+  <!-- Primera fila -->
+  <div class="row">
+    <div class="col-sm-4">
+      <button type="button" id="aleman">
+      <img src="images/aleman.jpg" class="img-thumbnail" alt="aleman">
+      </button>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" id="imperial">
+      <img src="images/imperial.jpg" class="img-thumbnail" alt="imperial">
+      </button>
+    </div>
+    <div class="col-sm-4">
+      <button type="button" id="dobleBurro">
+      <img src="images/doble_burro.jpg" class="img-thumbnail" alt="dobleburro">
+      </button>
+    </div>
+  </div>
+
+  <!-- Segunda fila -->
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="images/pampa.jpg" class="img-thumbnail" alt="pampa">
+    </div>
+    <div class="col-sm-4">
+      <img src="images/pizza.jpg" class="img-thumbnail" alt="pizza">
+    </div>
+    <div class="col-sm-4">
+      <img src="images/recargado.jpg" class="img-thumbnail" alt="recargado">
+    </div>
+  </div>
+
+  <!-- Tercera fila -->
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="images/aleman.jpg" class="img-thumbnail" alt="aleman">
+      </div>
+      <div class="col-sm-4">
+        <img src="images/cafe_mediano.jpg" class="img-thumbnail" alt="cafe">
+      </div>
+      <div class="col-sm-4">
+        <img src="images/doble_burro.jpg" class="img-thumbnail" alt="dobleburro">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Columna Pedidos -->
+  <div class="col-sm-4">
+    <div class="panel panel-primary">
+      
+      <div class="panel-heading text-center"><strong>PEDIDOS</strong></div>
+      
+      <div class="panel-body">
+
+        <div class="alert alert-info" id="pedidoAleman">
+        <a class="close" onclick="deleteOrder('pedidoAleman')">&times;</a>
+        <strong><p id="cantAleman"></p> Superpancho Alemán + Coca ó Bud.</strong> 
+        </div>
+
+        <div class="alert alert-info" id="pedidoImperial">
+        <a class="close" onclick="deleteOrder('pedidoImperial')">&times;</a>
+        <strong><p id="cantImperial"></p> Burguer Burro Imperial + Coca ó Bud.</strong>
+        </div>
+
+        <div class="alert alert-info" id="pedidoDobleBurro"><a class="close" onclick="deleteOrder('pedidoDobleBurro')">&times;</a>
+        <strong><p id="cantDobleBurro"></p> Burguer Doble Burro + Coca ó Bud.</strong>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container-fluid">
+    <div class="pull-right">
+    <div class="navbar-header">
+      <a href="#" class="btn btn-primary" role="button">Siguiente</a>
+    </div>
+    </div>
+  </div>
+</nav>
+
+</body>
+</html>
+
+<script>
+var cantAleman = 0, cantImperial = 0, cantDobleBurro = 0;
+$(document).ready(function(){
+  // Add or remove order from menu
+  $("#aleman").click(function(){
+    $("#pedidoAleman").show();
+    cantAleman++;
+    $("#cantAleman").html(cantAleman);
+  });
+
+  $("#imperial").click(function(){
+    $("#pedidoImperial").show();
+    cantImperial++;
+    $("#cantImperial").html(cantImperial);
+  });
+
+  $("#dobleBurro").click(function(){
+    $("#pedidoDobleBurro").show();
+    cantDobleBurro++;
+    $("#cantDobleBurro").html(cantDobleBurro);
+  });
+
+});
+
+// Delete order and restart quantity if click on "X"
+function deleteOrder(pedido) {
+  switch(pedido) {
+    case "pedidoAleman":
+      $("#pedidoAleman").hide();
+      cantAleman = 0;
+      break;
+
+    case "pedidoImperial":
+      $("#pedidoImperial").hide();
+      cantImperial = 0;
+      break;
+
+    case "pedidoDobleBurro":
+      $("#pedidoDobleBurro").hide();
+      cantDobleBurro = 0;
+      break;
+  }
+}
+
+</script>
+

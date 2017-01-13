@@ -1,0 +1,21 @@
+body { background-color: lightblue; }
+
+/* Cabecera Panel "Pedidos" */
+.panel-heading { 
+  font-size: 25px;
+  padding: 0px;
+}
+
+/* Cuerpo Panel "Pedidos" */
+.alert {
+  display: none;
+  margin: 5px;
+}
+/* Ver pedido y su cantidad en la misma línea */
+p { display: inline; }
+
+/* Botón "Siguiente" */
+.btn-primary { margin: 10px; }
+
+/* Botón cerrar "x" */
+.close { color: red; }
