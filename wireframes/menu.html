@@ -21,10 +21,14 @@
   <!-- Primera fila -->
   <div class="row">
     <div class="col-sm-4">
+      <button type="button" id="aleman">
       <img src="images/aleman.jpg" class="img-thumbnail" alt="aleman">
+      </button>
     </div>
     <div class="col-sm-4">
+      <button type="button" id="imperial">
       <img src="images/imperial.jpg" class="img-thumbnail" alt="imperial">
+      </button>
     </div>
     <div class="col-sm-4">
       <img src="images/doble_burro.jpg" class="img-thumbnail" alt="dobleburro">
@@ -63,7 +67,21 @@
   <div class="col-sm-4">
     <div class="panel panel-primary">
       <div class="panel-heading">Pedidos</div>
-      <div class="panel-body">...</div>
+      <div class="panel-body">
+
+        <div class="aleman" style="display:none">
+          <button type="button" class="close" data-dismiss="modal">&times;
+          </button>
+          <strong>1 Superpancho Alemán + Coca ó Bud.</strong> 
+        </div>
+
+        <div class="imperial" style="display:none">
+          <button type="button" class="close" data-dismiss="modal">&times;
+          </button>
+          <strong>1 Burguer Burro Imperial + Coca ó Bud.</strong>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -80,5 +98,21 @@
   </div>
 </nav>
 
+
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+
+  $("#aleman").click(function(){
+    $(".aleman").toggle();
+  });
+
+  $("#imperial").click(function(){
+    $(".imperial").toggle();
+  });
+
+});
+</script>
+
