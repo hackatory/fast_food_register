@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/menu.css">
 </head>
 
 
@@ -31,7 +32,9 @@
       </button>
     </div>
     <div class="col-sm-4">
+      <button type="button" id="dobleBurro">
       <img src="images/doble_burro.jpg" class="img-thumbnail" alt="dobleburro">
+      </button>
     </div>
   </div>
 
@@ -66,19 +69,23 @@
   <!-- Columna Pedidos -->
   <div class="col-sm-4">
     <div class="panel panel-primary">
-      <div class="panel-heading">Pedidos</div>
+      
+      <div class="panel-heading text-center"><strong>PEDIDOS</strong></div>
+      
       <div class="panel-body">
 
-        <div class="aleman" style="display:none">
-          <button type="button" class="close" data-dismiss="modal">&times;
-          </button>
-          <strong>1 Superpancho Alemán + Coca ó Bud.</strong> 
+        <div class="alert alert-info" id="pedidoAleman">
+        <a class="close" onclick="deleteOrder('pedidoAleman')">&times;</a>
+        <strong><p id="cantAleman"></p> Superpancho Alemán + Coca ó Bud.</strong> 
         </div>
 
-        <div class="imperial" style="display:none">
-          <button type="button" class="close" data-dismiss="modal">&times;
-          </button>
-          <strong>1 Burguer Burro Imperial + Coca ó Bud.</strong>
+        <div class="alert alert-info" id="pedidoImperial">
+        <a class="close" onclick="deleteOrder('pedidoImperial')">&times;</a>
+        <strong><p id="cantImperial"></p> Burguer Burro Imperial + Coca ó Bud.</strong>
+        </div>
+
+        <div class="alert alert-info" id="pedidoDobleBurro"><a class="close" onclick="deleteOrder('pedidoDobleBurro')">&times;</a>
+        <strong><p id="cantDobleBurro"></p> Burguer Doble Burro + Coca ó Bud.</strong>
         </div>
 
       </div>
@@ -92,27 +99,58 @@
   <div class="container-fluid">
     <div class="pull-right">
     <div class="navbar-header">
-      <a href="#" class="btn btn-primary" role="button" style="margin: 10px">Siguiente</a>
+      <a href="#" class="btn btn-primary" role="button">Siguiente</a>
     </div>
     </div>
   </div>
 </nav>
 
-
 </body>
 </html>
 
 <script>
+var cantAleman = 0, cantImperial = 0, cantDobleBurro = 0;
 $(document).ready(function(){
-
+  // Add or remove order from menu
   $("#aleman").click(function(){
-    $(".aleman").toggle();
+    $("#pedidoAleman").show();
+    cantAleman++;
+    $("#cantAleman").html(cantAleman);
   });
 
   $("#imperial").click(function(){
-    $(".imperial").toggle();
+    $("#pedidoImperial").show();
+    cantImperial++;
+    $("#cantImperial").html(cantImperial);
+  });
+
+  $("#dobleBurro").click(function(){
+    $("#pedidoDobleBurro").show();
+    cantDobleBurro++;
+    $("#cantDobleBurro").html(cantDobleBurro);
   });
 
 });
+
+// Delete order and restart quantity if click on "X"
+function deleteOrder(pedido) {
+  switch(pedido) {
+    case "pedidoAleman":
+      $("#pedidoAleman").hide();
+      cantAleman = 0;
+      break;
+
+    case "pedidoImperial":
+      $("#pedidoImperial").hide();
+      cantImperial = 0;
+      break;
+
+    case "pedidoDobleBurro":
+      $("#pedidoDobleBurro").hide();
+      cantDobleBurro = 0;
+      break;
+  }
+}
+
 </script>
 
