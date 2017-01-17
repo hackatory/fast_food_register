@@ -18,4 +18,8 @@ p { display: inline; }
 .btn-primary { margin: 10px; }
 
 /* Botón cerrar "x" */
+<<<<<<< HEAD
 .close { color: red; }
+=======
+.close { color: red; }
+>>>>>>> 58b311a4dea49777358ac5bfba3657292df7917d
