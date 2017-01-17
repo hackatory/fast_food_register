@@ -1,0 +1,57 @@
+/* Clase para los formularios */ 
+.container { 
+  width: 20%; 
+  margin:auto; 
+  margin-top: 1%;
+  padding: 1%;
+  background-color: lightyellow;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 25px;
+}
+
+fieldset {
+  border-style: solid black;
+  border-width: 2px;
+  border-radius: 20px;
+}
+
+h2 { 
+  margin:1px; 
+  text-align: center;
+}
+p { 
+  text-align: center; 
+  font-weight: bold;
+  font-size: 140%; 
+  margin: 0; 
+}
+
+select { width: 95%; }
+
+body {  
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: top-left;
+  background-attachment: fixed;
+  background-size: 40%;
+  background-color: black;
+}
+
+#pancho-left {
+  width: 35%;
+  float: left;
+  position: fixed;
+}
+
+#pancho-right {
+  width: 35%;
+  float: right;
+  position: fixed;
+  right: 0px;
+}
+
+#siguiente {
+  margin-left: 90%;
+  position: fixed;
+}

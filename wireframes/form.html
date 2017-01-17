@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Formulario Demo</title>
+  
+  <!--JQuery (local) -->
+  <!--No usar JQuery de CDN porque se ve mal -->
+  <link rel="stylesheet" href="jquery/jquery-ui.min.css">
+  <script src="jquery/external/jquery/jquery.js"></script>
+  <script src="jquery/jquery-ui.min.js"></script>
+  <!-- No usar Boostraps en éste archivo, se rompería el "autocompletar" -->
+  <script src="jquery/scripts/autocomplete.js"></script>
+  <link rel="stylesheet" href="styles/form.css">
+</head>
+
+<body>
+<img id="pancho-left" src="http://static.panoramio.com/photos/large/52306869.jpg">
+<img id="pancho-right" src="http://static.panoramio.com/photos/large/52306869.jpg">
+
+<div class="container"> 
+  <h2>Superpancho Alemán</h2><hr>
+  <form>
+    <label>Nombre: </label><br>
+    <input id="name" placeholder="Cliente"><br><br>
+    <label for="tags">Salsas: </label><br>
+    <input id="tags" placeholder="Tipo">
+    <br><br>
+
+    <fieldset>
+    <legend> Extras: </legend>
+    <input type="checkbox" name="checkbox-1" id="checkbox-1">
+    <label for="checkbox-1">Papas Fritas</label><br>
+    <input type="checkbox" name="checkbox-2" id="checkbox-2">
+    <label for="checkbox-2">Papas Rústicas</label><br>
+    <input type="checkbox" name="checkbox-3" id="checkbox-3">
+    <label for="checkbox-3">Rebozados</label><br>
+    </fieldset>
+  </form>
+</div>
+
+<div class="container"> 
+  <h2>Bebida</h2><hr>
+  <form>
+    <label>Nombre: </label><br>
+    <input id="name" placeholder="Cliente"><br><br>
+    <label>Bebidas: </label><br>
+    <select id="bebida">
+      <option>Coca Cola 350ml</option>
+      <option>Budweisser Lata</option>
+    </select>
+    <br><br>
+  </form>
+</div>
+
+<button type="button" id="siguiente">Siguiente</button>
+
+</body>
+</html>
